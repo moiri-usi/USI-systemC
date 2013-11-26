@@ -1,6 +1,7 @@
 #include <systemc.h>
-#include <reg1.h>
-#include <tester.h>
+#include <fstream>
+#include "reg1.h"
+#include "tester.h"
 using namespace std;
 
 int sc_main(int argc, char *argv[]) {
@@ -14,11 +15,20 @@ int sc_main(int argc, char *argv[]) {
     module_reg.in(mod_in);
     module_reg.clk(clk);
     module_reg.out(mod_out);
-    tester testbench("testbench1");
+
+    Tester testbench("testbench1");
     testbench.out(mod_in);
     testbench.in(mod_out);
     testbench.clk(clk);
     testbench.enable_reg(enable);
     testbench.reset_reg(reset);
+
+    sc_trace_file *t_file = sc_create_vcd_trace_file("test");
+    sc_trace(t_file, clk, "clock");
+    sc_trace(t_file, enable, "enable");
+    sc_trace(t_file, reset, "reset");
+    sc_trace(t_file, mod_in, "reg_in");
+    sc_trace(t_file, mod_out, "reg_out");
+
     sc_start();
 }

@@ -1,4 +1,4 @@
-OBJS = main.o
+OBJS = main.o tester.o
 G++ = g++
 SYSTEMC_DIR = /opt/systemc-2.3.0
 I_DIR = -I ./ -I $(SYSTEMC_DIR)/include
@@ -11,3 +11,4 @@ test: $(OBJS)
 clean:
 	rm -f test
 	rm -f *.o
+	rm -f *.vcd
