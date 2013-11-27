@@ -18,7 +18,6 @@ int sc_main(int argc, char *argv[]) {
 
     Tester testbench("testbench1");
     testbench.out(mod_in);
-    testbench.in(mod_out);
     testbench.clk(clk);
     testbench.enable_reg(enable);
     testbench.reset_reg(reset);

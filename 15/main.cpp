@@ -18,8 +18,6 @@ int sc_main(int argc, char *argv[]) {
 
     Tester testbench("testbench1");
     testbench.clk(clk);
-    testbench.add_out(mod_out);
-    testbench.add_cout(mod_cout);
     testbench.add_in1(mod_in1);
     testbench.add_in2(mod_in2);
     testbench.add_cin(mod_cin);

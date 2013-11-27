@@ -26,9 +26,6 @@ int sc_main(int argc, char *argv[]) {
 
     Tester testbench("testbench1");
     testbench.clk(clk);
-    testbench.and_in(and_out);
-    testbench.or_in(or_out);
-    testbench.xor_in(xor_out);
     testbench.out1(mod_in1);
     testbench.out2(mod_in2);
 
