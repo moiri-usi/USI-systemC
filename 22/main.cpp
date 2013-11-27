@@ -9,7 +9,7 @@ int sc_main(int argc, char *argv[]) {
     sc_signal <bool> mod_enable, mod_reset, mod_in;
     sc_clock clk("clock", 10, SC_NS);
 
-    ShiftReg8 module_shift("adder");
+    ShiftReg8 module_shift("shifter");
     module_shift.in(mod_in);
     module_shift.out(mod_out);
     module_shift.clk(clk);
