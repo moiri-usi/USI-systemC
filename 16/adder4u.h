@@ -17,7 +17,7 @@ SC_MODULE(Adder4) {
     Adder1 module_add4;
 
     void selector() {
-        sc_lv<4> temp_out;
+        sc_bv<4> temp_out;
         add1_in1.write(in1.read()[0]);
         add2_in1.write(in1.read()[1]);
         add3_in1.write(in1.read()[2]);
@@ -30,7 +30,7 @@ SC_MODULE(Adder4) {
         temp_out[1] = add2_out.read();
         temp_out[2] = add3_out.read();
         temp_out[3] = add4_out.read();
-        out = temp_out;
+        out = static_cast<sc_uint<4> >(temp_out);
         cout.write(add4_cout); // do this here to keep cout in sync
     }
 
