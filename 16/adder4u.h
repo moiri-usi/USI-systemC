@@ -30,7 +30,7 @@ SC_MODULE(Adder4) {
         temp_out[1] = add2_out.read();
         temp_out[2] = add3_out.read();
         temp_out[3] = add4_out.read();
-        out = static_cast<sc_uint<4> >(temp_out);
+        out.write(static_cast<sc_uint<4> >(temp_out));
         cout.write(add4_cout); // do this here to keep cout in sync
     }
 
